@@ -1,13 +1,22 @@
 import React, { useContext } from 'react';
-import { ProductsContext } from '../contexts/productsContext';
+import { CategoriesContext } from '../contexts/CategoriesContext';
 import Product from './Product';
 
 const Shop = () => {
-    const {products} = useContext(ProductsContext);
+    const {categoriesMap} = useContext(CategoriesContext);
   return (
-    <div className='products-container'>
-        {products.map((product) => <Product key={product.id} product={product}/>)}
-    </div>
+    <>
+    {
+      Object.keys(categoriesMap).map((title, index) => (
+        <section key={index}>
+          <h2>{title[0].toUpperCase() + title.substring(1, title.length).toLowerCase()}</h2>
+          <div className='products-container' key={index}>
+            {categoriesMap[title].map((product) => (<Product key={product.id} product={product}/>))}
+          </div>
+        </section>
+      ))
+    }
+    </>
   )
 }
 
