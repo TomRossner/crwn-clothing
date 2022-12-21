@@ -1,0 +1,15 @@
+.back-to-top-button{
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    font-size: 3.5rem;
+    color: black;
+    cursor: pointer;
+    animation: dotFadeInScale1 0.3s forwards;
+    transition: color 0.15s, scale 0.15s;
+
+    &:hover{
+        color: rgb(226, 89, 35, 1);
+        scale: 1.05;
+    }
+}

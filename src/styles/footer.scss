@@ -1,0 +1,63 @@
+footer{
+    min-width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+    p{
+        text-align: center;
+        font-weight: 500;
+        color: black;
+        cursor: default;
+    }
+
+    span{
+        font-weight: 300;
+        color: black;
+        cursor: default;
+    }
+
+    .icons-container{
+        display: flex;
+        gap: 1.5em;
+        align-items: center;
+        justify-content: center;
+
+        .nav-link{
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon{
+            scale: 1.5;
+        }
+
+        #github, #linkedin{
+            color: rgba(0, 0, 0, 0.7);
+            transition: color 0.2s linear;
+        }
+
+        #github:hover{
+            color: rgb(26, 29, 43);
+        }
+        
+        #linkedin:hover{
+            color: rgb(26, 85, 194);
+        }
+    }
+}
+
+@media screen and (min-width: 150px) and (max-width: 500px) {
+    footer{
+
+        p{
+            font-size: 0.8rem;
+            word-break: normal;
+        }
+    }
+}

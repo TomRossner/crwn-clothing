@@ -1,0 +1,114 @@
+// .account-page-container{
+//     width: 40%;
+//     min-height: 60vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     animation: containerFadeIn 0.7s forwards;
+// }
+
+// .auth-form{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 1em;
+    
+//     .icon{
+//         scale: 2;
+//     }
+
+//     h2{
+//         font-size: 2rem;
+//     }
+
+//     .sign-up-forgot-password{
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 0.2em;
+        
+//         p{
+//             width: 100%;
+//             text-align: left;
+//         }
+
+//         .link{
+//             text-decoration: none;
+//             font-weight: 500;
+//             color: rgb(0, 132, 255);
+//         }
+//     }
+
+//     .inputs-container{
+//         display: flex;
+//         flex-direction: column;
+//         gap: 0.5em;
+//         margin: 0 auto 1em auto;
+//         max-width: 80%;
+//         background-color: transparent;
+
+//         .error{
+//             padding: 1em;
+//             background-color: rgba(226, 57, 35, 0.2);
+//             border-radius: 10px;
+//             font-size: 0.95rem;
+//             color: rgb(226, 89, 35);
+//             text-align: center;
+//             animation: fadeIn 0.5s forwards;
+//             max-width: 100%;
+//             margin: 0 auto;
+//         }
+//     }
+
+//     .btn{
+//         font-family: Poppins, sans-serif;
+//         font-size: 1.1rem;
+//         background-color: rgb(226, 89, 35, 0.8);
+//         color: white;
+//         border: none;
+//         border-radius: 5px;
+//         width: 40%;
+//         margin: 0 auto;
+//         max-width: 50%;
+//         text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+//         padding: 0.2em;
+//         cursor: pointer;
+//         transition: box-shadow 0.2s, scale 0.1s;
+
+//         &:hover{
+//             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+//             scale: 1.02;
+//         }
+
+//         &.blue{
+//             background-color: rgb(0, 132, 255);
+//         }
+//     }
+// }
+
+// .user-signup-success{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 5em;
+//     height: auto;
+//     width: 0 auto;
+//     justify-content: center;
+//     align-items: center;
+
+//     p{
+//         color: rgb(67, 209, 67);
+//         background-color: rgba(200, 200, 200, 0.4);
+//         padding: 1.5em;
+//         border-radius: 10px;
+//     }
+//     .icon{
+//         scale: 7;
+//         color: rgb(69, 187, 69);
+//     }
+// }
+
+// @media screen and (min-width: 200px) and (max-width: 768px) {
+//     .account-page-container{
+//         width: 95%;
+//     }
+// }

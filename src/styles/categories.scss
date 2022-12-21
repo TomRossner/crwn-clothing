@@ -1,0 +1,19 @@
+.categories-container{
+    // border: 1px solid red;
+    margin: 0 auto;
+    min-height: auto;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    width: 80%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+    .categories-container{
+        width: 100%;
+    }
+}
+

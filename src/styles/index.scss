@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-container{
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clear{
+    flex: 1;
+}
+
+.btn{
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5em;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s, color 0.1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &:hover{
+        background-color: white;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    &.disabled{
+        cursor: not-allowed;
+        background-color: rgba(100, 100, 100, 0.5);
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    &.blue{
+        background-color: rgb(0, 132, 255);
+        max-width: 100%;
+        padding-inline: 1em;
+
+        &:hover{
+            background-color: rgba(0, 132, 255, 0.8);
+            
+            .link{
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+
+}
+.btn .link, .link{
+    text-decoration: none;
+    color: black;
+}
+
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1;
+    animation: containerFadeIn 0.5s forwards;
+    
+    h2{
+        text-align: center;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes containerFadeIn {
+    0%{
+        scale: 0.8;
+        opacity: 0;
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes dotFadeIn {
+    0%{
+        scale: 0.5;
+        opacity: 0;
+    }
+    50%{
+        scale: 4.5;
+    }
+    100%{
+        scale: 3;
+        opacity: 1;
+    }
+}
+
+@keyframes dotFadeInScale1 {
+    0%{
+        scale: 0.3;
+        opacity: 0;
+    }
+    60%{
+        scale: 1.2;
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInReverse {
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    40%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoFadeIn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

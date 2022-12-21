@@ -1,0 +1,247 @@
+header{
+    width: 100%;
+    height: auto;
+    max-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0 2em;
+    margin: 0 auto 2em auto;
+    background-color: rgb(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 10px rgb(0, 0, 0, 0.3);
+    position: relative;
+
+    .logo{
+        width: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+        span{
+            width: 100%;
+            text-align: left;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-weight: 700;
+            font-family: "Ubuntu", sans-serif;
+
+            .icon{
+                scale: 1.3;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .nav-link{
+            text-decoration: none;
+            color: black;
+            padding: 1em;
+        }
+    }
+
+    .nav-full-width{
+        width: auto;
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            list-style: none;
+            overflow: hidden;
+
+            .nav-link{
+                height: 100%;
+                padding: 1em 1em;
+                align-self: stretch;
+                text-decoration: none;
+                color: black;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                font-family: Poppins, sans-serif;
+                font-size: 0.95rem;
+                cursor: pointer;
+                user-select: none;
+
+                span{
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+
+                span.cart-with-count{
+                    display: flex;
+                    position: relative;
+
+                    .count{
+                        position: absolute;
+                        top: -0.5em;
+                        right: -1.1em;
+                        padding: 0.5rem;
+                        width: 1rem;
+                        height: 1rem;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        color: white;
+                        font-size: 0.6em;
+                        font-weight: 500;
+                        background-color: rgb(226, 89, 35, 1);
+                        text-transform: lowercase;
+                        box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+                    }
+
+                    .cart-notification{
+                        color: rgb(226, 89, 35, 1);
+                        position: absolute;
+                        top: -0.1em;
+                        right: -0.7em;
+                        scale: 3;
+                        animation: dotFadeIn 0.2s forwards;
+                    }
+                }
+
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.1);
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                .icon{
+                    scale: 1.5;
+                }
+            }
+        }
+        .ul-gap{
+            gap: 1em;
+        }
+    }
+    .nav-mobile{
+        display: none;
+    }
+}
+
+.menu{
+    display: none;
+}
+
+@media screen and (min-width: 150px) and (max-width: 768px) {
+    header{
+        padding: 0;
+        justify-content: space-between;
+
+        .logo{
+            span{
+                font-size: 1.3rem;
+            }
+        }
+        .nav-full-width{
+            display: none;
+        }
+        .nav-mobile{
+            display: inline-block;
+
+            .icon{
+                scale: 3;
+            }
+
+            .wrapper-btn{
+                border: none;
+                background-color: transparent;
+                padding: 1.5em 2em;
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 15;
+            }
+        }
+    }
+    .menu{
+        display: flex;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 0%;
+        transition: height 0.3s;
+
+        background: rgba(36, 36, 36, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8x);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        .menu-mobile-logo{
+            display: none;
+        }
+
+        ul{
+            display: none;
+        }
+    }
+    .open{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5em;
+        padding: 2em;
+
+        .menu-mobile-logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2em;
+            animation: logoFadeIn 0.5s forwards;
+
+            p{
+                font-family: Ubuntu, sans-serif;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            .icon{
+                display: block;
+                scale: 5;
+            }
+        }
+    
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            width: 100%;
+            animation: fadeIn 0.5s forwards;
+            
+            .nav-link{
+                text-decoration: none;
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                border-radius: 8px;
+                padding: 0.2em 2em;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.8);
+                transition: outline 0.1s, box-shadow 0.2s, font-size 0.2s, color 0.1s;
+                
+                &:hover{
+                    outline: 2px solid rgba(200, 200, 200, 0.8);
+                    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+                    font-size: 1.7rem;
+                    color: white;
+                    background-color: rgb(226, 89, 35, 0.3);
+                }
+            }
+        }
+    }
+}
+

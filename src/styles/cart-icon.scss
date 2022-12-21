@@ -1,0 +1,37 @@
+.cart-icon-container {
+    width: auto;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .icon.shopping {
+        width: 3rem;
+    }
+
+    .item-count {
+        position: absolute;
+        font-size: 1.5em;
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        text-align: center;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .cart-icon-container{
+        padding-bottom: 0.2em;
+
+        .icon.shopping{
+            width: 1.8rem;
+        }
+
+        .item-count{
+            font-size: 0.9em;
+            padding-bottom: 0.2em;
+        }
+    }
+}
