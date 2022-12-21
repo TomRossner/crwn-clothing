@@ -32,7 +32,7 @@ const NavBar = () => {
     <CartDropdown toggleIsCartOpen={toggleIsCartOpen}/>
     <header>
         <div className='logo'>
-            <Link to="/" className='nav-link'>
+            <Link to="/CRWN-Clothing/" className='nav-link'>
                 <span>CRWN<GiCrenelCrown className='icon'/>Clothing</span>
             </Link>
         </div>
