@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CROWN-Clothing.git/static/css/main.f8e7fc4d.css",
-    "main.js": "/CROWN-Clothing.git/static/js/main.90d9b74b.js",
-    "static/js/787.4fb5f8c8.chunk.js": "/CROWN-Clothing.git/static/js/787.4fb5f8c8.chunk.js",
-    "index.html": "/CROWN-Clothing.git/index.html",
-    "main.f8e7fc4d.css.map": "/CROWN-Clothing.git/static/css/main.f8e7fc4d.css.map",
-    "main.90d9b74b.js.map": "/CROWN-Clothing.git/static/js/main.90d9b74b.js.map",
-    "787.4fb5f8c8.chunk.js.map": "/CROWN-Clothing.git/static/js/787.4fb5f8c8.chunk.js.map"
+    "main.css": "/CROWN-Clothing/static/css/main.f8e7fc4d.css",
+    "main.js": "/CROWN-Clothing/static/js/main.3f738cf8.js",
+    "static/js/787.4fb5f8c8.chunk.js": "/CROWN-Clothing/static/js/787.4fb5f8c8.chunk.js",
+    "index.html": "/CROWN-Clothing/index.html",
+    "main.f8e7fc4d.css.map": "/CROWN-Clothing/static/css/main.f8e7fc4d.css.map",
+    "main.3f738cf8.js.map": "/CROWN-Clothing/static/js/main.3f738cf8.js.map",
+    "787.4fb5f8c8.chunk.js.map": "/CROWN-Clothing/static/js/787.4fb5f8c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8e7fc4d.css",
-    "static/js/main.90d9b74b.js"
+    "static/js/main.3f738cf8.js"
   ]
 }
