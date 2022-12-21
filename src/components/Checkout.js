@@ -14,7 +14,7 @@ const Checkout = () => {
         {!cartItems.length ?
         (<div className='container'>
             <h2>Your cart is empty</h2>
-            <button className='btn blue'><Link className='link' to="/">Back to the Homepage</Link></button>
+            <button className='btn blue'><Link className='link' to="/CRWN-Clothing/">Back to the Homepage</Link></button>
         </div>
         ):(
         <div className='items-container'>

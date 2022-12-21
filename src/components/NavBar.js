@@ -24,7 +24,7 @@ const NavBar = () => {
 
     useEffect(() => {
         if (currentUser === null) return;
-        navigate("/");
+        navigate("/CRWN-Clothing/");
     }, [currentUser, navigate]);
 
   return (
@@ -38,7 +38,7 @@ const NavBar = () => {
         </div>
         <nav className='nav-full-width'>
             <ul>
-                <Link to="/" className='nav-link'><span>Home</span></Link>
+                <Link to="/CRWN-Clothing/" className='nav-link'><span>Home</span></Link>
                 <Link to="shop" className='nav-link'><span>Shop</span></Link>
                 <Link to="about" className='nav-link'><span>About</span></Link>
             </ul>
@@ -68,7 +68,7 @@ const NavBar = () => {
             <p>CRWN CLOTHING</p>
         </div>
         <ul>
-            <Link to="/" className='nav-link' onClick={handleChangeMenuIcon}>Home</Link>
+            <Link to="/CRWN-Clothing/" className='nav-link' onClick={handleChangeMenuIcon}>Home</Link>
             <Link to="shop" className='nav-link' onClick={handleChangeMenuIcon}>Shop</Link>
             <Link to="about" className='nav-link' onClick={handleChangeMenuIcon}>About</Link>
         </ul>
