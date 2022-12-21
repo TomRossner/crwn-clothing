@@ -12,9 +12,9 @@ const Logout = () => {
         await signOutUser();
         setCurrentUser(null);
       }
-      if (currentUser === null) return navigate("/");
+      if (currentUser === null) return navigate("/CRWN-Clothing/");
       handleSignOut();
-    }, [navigate, currentUser, setCurrentUser])
+    }, [currentUser, setCurrentUser]);
 
   return null;
 }

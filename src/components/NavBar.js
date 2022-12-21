@@ -22,10 +22,11 @@ const NavBar = () => {
     }
     const {cartItems} = useContext(CartContext);
 
-    useEffect(() => {
-        if (currentUser === null) return;
-        navigate("/CRWN-Clothing/");
-    }, [currentUser, navigate]);
+    // useEffect(() => {
+    //     if (currentUser === null) return;
+    //     console.log("Redirecting to Homepage")
+    //     // navigate("/CRWN-Clothing/");
+    // }, [currentUser, navigate]);
 
   return (
     <>

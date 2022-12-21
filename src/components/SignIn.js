@@ -66,9 +66,9 @@ const SignIn = () => {
 
     useEffect(() => {
         if (isLoggedIn) {
-            navigate("/");
+            navigate("/CRWN-Clothing/");
         }
-    }, [isLoggedIn, navigate])
+    }, [isLoggedIn])
 
     useEffect(() => {
         const awaitRedirectResult = async () => {

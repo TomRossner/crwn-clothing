@@ -9,7 +9,7 @@ const Category = ({category}) => {
         <img src={url} alt="category thumbnail" />
       </div>
       <h2>{title}</h2>
-      <Link to="/" className="category-button">Shop now</Link>
+      <Link to="/CRWN-Clothing/" className="category-button">Shop now</Link>
     </div>
   );
 };
