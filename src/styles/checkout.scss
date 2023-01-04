@@ -92,11 +92,12 @@
 
     .btn.long{
         width: 100%;
-        color: rgb(8, 165, 8);
+        background-color: rgb(8, 165, 8);
         font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.7);
 
         &:hover{
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(8, 165, 8, 0.8);
         }
     }
 

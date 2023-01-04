@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Checkout = () => {
     const {cartItems, addItemToCart, removeItemFromCart, decrementItemQuantity, cartTotal} = useContext(CartContext);
     const currency = "USD";
-    
 
   return (
     <>

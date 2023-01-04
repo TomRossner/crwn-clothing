@@ -27,7 +27,6 @@ const NavBar = () => {
     //     console.log("Redirecting to Homepage")
     //     // navigate("/CRWN-Clothing/");
     // }, [currentUser, navigate]);
-
   return (
     <>
     <CartDropdown toggleIsCartOpen={toggleIsCartOpen}/>
