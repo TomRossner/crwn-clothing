@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import {createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser} from "./utils/firebase";
+import { setCurrentUser } from "./store/user/userAction";
+import { useDispatch } from "react-redux";
 
 // Styles
 import "./styles/index.scss";
@@ -31,6 +34,7 @@ import Checkout from "./components/Checkout";
 
 const App = () => {
   const [scrollButton, setScrollButton] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -38,6 +42,20 @@ const App = () => {
       else return setScrollButton(false);
     });
   }, [])
+
+
+  useEffect(() => {
+    const signOut = async () => await signOutUser();
+    const unsubscribe = onAuthStateChangedListener((user) => {
+        if (user) createUserDocumentFromAuth(user);
+        dispatch(setCurrentUser(user));
+    });
+    signOut();
+    return unsubscribe;
+}, []);
+
+
+
 
   return (
     <div className='main-container'>

@@ -1,9 +1,21 @@
-import React, { useContext } from 'react';
-import { CategoriesContext } from '../contexts/CategoriesContext';
+import React, { useEffect } from 'react';
 import Product from './Product';
+import { getCategoriesAndDocuments } from '../utils/firebase';
+import { setCategoriesMap } from '../store/categories/categoryAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCategoriesMap } from '../store/categories/categorySelector';
 
 const Shop = () => {
-    const {categoriesMap} = useContext(CategoriesContext);
+    const dispatch = useDispatch();
+    const categoriesMap = useSelector(selectCategoriesMap);
+
+    useEffect(() => {
+      const getCategoriesMap = async () => {
+        const categoryMap = await getCategoriesAndDocuments();
+        dispatch(setCategoriesMap(categoryMap));
+      }
+      getCategoriesMap();
+    }, [])
   return (
     <>
     {

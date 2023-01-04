@@ -1,32 +1,26 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import {GiCrenelCrown} from "react-icons/gi";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {RxHamburgerMenu} from "react-icons/rx";
 import {RxCross1} from "react-icons/rx";
-import { UserContext } from '../contexts/userContext';
 import {BsDot} from "react-icons/bs";
 import CartDropdown from './CartDropdown';
 import { CartContext } from '../contexts/CartContext';
+import { useSelector } from 'react-redux';
+import {selectCurrentUser} from "../store/user/userSelector";
 
 const NavBar = () => {
     const [menuIcon, setMenuIcon] = useState(false);
     const menuShowOpen = <RxHamburgerMenu className='icon'/>;
     const menuShowClose = <RxCross1 className='icon'/>;
     const handleChangeMenuIcon = () => setMenuIcon(!menuIcon);
-    const {currentUser} = useContext(UserContext);
-    const navigate = useNavigate();
     const {isCartOpen, setIsCartOpen} = useContext(CartContext);
     const toggleIsCartOpen = () => {
         setIsCartOpen(!isCartOpen);
         setMenuIcon(false);
     }
     const {cartItems} = useContext(CartContext);
-
-    // useEffect(() => {
-    //     if (currentUser === null) return;
-    //     console.log("Redirecting to Homepage")
-    //     // navigate("/CRWN-Clothing/");
-    // }, [currentUser, navigate]);
+    const currentUser = useSelector(selectCurrentUser);
   return (
     <>
     <CartDropdown toggleIsCartOpen={toggleIsCartOpen}/>

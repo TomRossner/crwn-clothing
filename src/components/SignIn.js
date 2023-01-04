@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import {GiCrenelCrown} from "react-icons/gi";
 import { Link, useNavigate } from 'react-router-dom';
 import Input from './common/Input';
@@ -10,7 +10,8 @@ import {
     auth,
     signInUserWithEmailAndPassword
 } from "../utils/firebase";
-import { UserContext } from '../contexts/userContext';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../store/user/userSelector';
 
 const defaultFormFields = {
     email: "",
@@ -21,10 +22,8 @@ const SignIn = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
     const [errors, setErrors] = useState("");
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
-    const {currentUser} = useContext(UserContext);
-
+    const currentUser = useSelector(selectCurrentUser);
     const resetFormFields = () => setFormFields(defaultFormFields);
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -38,7 +37,6 @@ const SignIn = () => {
         if (!email || !password) return setErrors("Please enter your email and password.");
         try {
             await signInUserWithEmailAndPassword(email, password);
-            if (currentUser) setIsLoggedIn(true);
             if (errors) setErrors("");
             resetFormFields();
         } catch (error) {
@@ -65,10 +63,8 @@ const SignIn = () => {
     }
 
     useEffect(() => {
-        if (isLoggedIn) {
-            navigate("/CRWN-Clothing/");
-        }
-    }, [isLoggedIn])
+        if (currentUser) navigate("/CRWN-Clothing/");
+    }, [currentUser])
 
     useEffect(() => {
         const awaitRedirectResult = async () => {
