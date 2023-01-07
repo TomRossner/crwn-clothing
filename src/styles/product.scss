@@ -135,10 +135,13 @@
                     max-width: auto;
                     scale: 1.2;
                 }
+                .btn{
+                    font-size: 1.2rem;
+                }
             }
             .product-name-price{
                 p, span{
-                    font-size: 0.95rem;
+                    font-size: 0.8rem;
                 }
             }
         }
@@ -147,14 +150,42 @@
 
 @media screen and (min-width: 401px) and (max-width: 550px){
     .product-card{
-        max-width: 70%;
+        max-width: 100%;
         margin: 0 auto;
+
+        .product-card-content{
+            .product-image-add-to-cart{
+                img{
+                    height: auto;
+                    max-width: auto;
+                    scale: 1.2;
+                }
+                .btn{
+                    font-size: 1rem;
+                }
+            }
+            .product-name-price{
+                p, span{
+                    font-size: 0.8rem;
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 150px) and (max-width: 400px){
     .product-card{
         .product-card-content{
+            .product-image-add-to-cart{
+                img{
+                    height: auto;
+                    max-width: auto;
+                    scale: 1.2;
+                }
+                .btn{
+                    font-size: 1.1rem;
+                }
+            }
             .product-name-price{
                 p, span{
                     font-size: 0.95rem;

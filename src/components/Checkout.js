@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import React from 'react';
 import {VscTrash} from "react-icons/vsc";
 import {BiChevronLeft, BiChevronRight} from "react-icons/bi";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCartItems, selectCartTotal } from '../store/cart/cartSelector';
+import { addItemToCart, decrementItemQuantity, removeItemFromCart } from '../store/cart/cartAction';
 
 const Checkout = () => {
-    const {cartItems, addItemToCart, removeItemFromCart, decrementItemQuantity, cartTotal} = useContext(CartContext);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
+    const cartTotal = useSelector(selectCartTotal);
     const currency = "USD";
 
   return (
@@ -33,12 +37,12 @@ const Checkout = () => {
                             <div>{name}</div>
                             <div>{price} {currency}</div>
                             <div className='quantity'>
-                                <BiChevronLeft onClick={() => decrementItemQuantity(item)} className='icon'/>
+                                <BiChevronLeft onClick={() => dispatch(decrementItemQuantity(cartItems, item))} className='icon'/>
                                     {quantity}
-                                <BiChevronRight onClick={() => addItemToCart(item)} className='icon'/>
+                                <BiChevronRight onClick={() => dispatch(addItemToCart(cartItems, item))} className='icon'/>
                             </div>
                             <div className='remove'>
-                                <VscTrash className='trash-icon' onClick={() => removeItemFromCart(item)}/>
+                                <VscTrash className='trash-icon' onClick={() => dispatch(removeItemFromCart(cartItems, item))}/>
                             </div>
                         </div>
                     )

@@ -2,11 +2,11 @@ section h2{
     text-align: center;
 }
 .products-container{
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1em;
     padding: 2rem 0;
     align-items: center;
     animation: fadeIn 0.5s forwards;
@@ -15,27 +15,27 @@ section h2{
 @media screen and (min-width: 1261px){
     .products-container{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         place-items: center;
-        max-width: 55%;
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1260px){
     .products-container{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         place-items: center;
-        max-width: 80%;
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width: 801px) and (max-width: 1024px){
     .products-container{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         place-items: center;
-        max-width: 90%;
+        max-width: 100%;
     }
 }
 
@@ -48,7 +48,16 @@ section h2{
     }
 }
 
-@media screen and (min-width: 150px) and (max-width: 550px){
+@media screen and (min-width: 401px) and (max-width: 550px){
+    .products-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 150px) and (max-width: 400px){
     .products-container{
         display: grid;
         grid-template-columns: repeat(1, 1fr);

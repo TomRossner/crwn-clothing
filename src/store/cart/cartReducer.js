@@ -1,17 +1,17 @@
-import { combineReducers } from "redux";
+import { CART_ACTION_TYPES } from "./cartTypes";
 
-const CART_ACTION_TYPES = {
-    SET_IS_CART_OPEN: "SET_IS_CART_OPEN",
-    SET_CART_ITEMS: "SET_CART_ITEMS"
+const CART_INITIAL_VALUES = {
+    cartItems: [],
+    isCartOpen: false
 }
 
-export const cartReducer = (state = INITIAL_VALUES, action) => {
+export const cartReducer = (state = CART_INITIAL_VALUES, action = {}) => {
     const {type, payload} = action;
     switch(type) {
         case CART_ACTION_TYPES.SET_CART_ITEMS:
             return {
                 ...state,
-                ...payload
+                cartItems: payload
             }
         case CART_ACTION_TYPES.SET_IS_CART_OPEN:
             return {
@@ -21,11 +21,4 @@ export const cartReducer = (state = INITIAL_VALUES, action) => {
     default: 
         return state;
     }
-}
-
-const INITIAL_VALUES = {
-    cartItems: [],
-    cartCount: 0,
-    cartTotal: 0,
-    isCartOpen: false
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import {createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser} from "./utils/firebase";
+import { createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser } from "./utils/firebase";
 import { setCurrentUser } from "./store/user/userAction";
 import { useDispatch } from "react-redux";
 
@@ -19,6 +19,7 @@ import "./styles/back-to-top.scss";
 import "./styles/cart-dropdown.scss";
 import "./styles/cart-item.scss";
 import "./styles/checkout.scss";
+import "./styles/categories-preview.scss";
 
 // Components
 import Home from "./components/Home";
@@ -30,6 +31,7 @@ import Logout from "./components/Logout";
 import Shop from "./components/Shop";
 import BackToTop from "./components/BackToTop";
 import Checkout from "./components/Checkout";
+import CategoryExpanded from "./components/CategoryExpanded";
 
 
 const App = () => {
@@ -41,7 +43,7 @@ const App = () => {
       if (window.scrollY > 150) return setScrollButton(true);
       else return setScrollButton(false);
     });
-  }, [])
+  }, []);
 
 
   useEffect(() => {
@@ -55,14 +57,13 @@ const App = () => {
 }, []);
 
 
-
-
   return (
     <div className='main-container'>
       <NavBar/>
       <Routes>
-          <Route path="/CRWN-Clothing/" element={<Home/>}/>
+          <Route path="/CRWN-Clothing" element={<Home/>}/>
           <Route path="shop" element={<Shop/>}/>
+          <Route path="shop/:category" element={<CategoryExpanded/>}></Route>
           <Route path="about" element={<Home/>} />
           <Route path="sign-in" element={<SignIn/>}/>
           <Route path="sign-up" element={<Signup/>}/>
@@ -73,7 +74,7 @@ const App = () => {
       {scrollButton ? <BackToTop/> : null}
       <Footer/>
     </div>
-  );
+  )
 }
 
 export default App;

@@ -66,12 +66,20 @@ body{
         }
     }
 
+    &.small{
+        width: 50%;
+        margin: 0 auto;
+    }
+
 }
 .btn .link, .link{
     text-decoration: none;
     color: black;
 }
 
+.white{
+    color: white;
+}
 
 .container{
     width: 80%;

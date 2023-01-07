@@ -1,25 +1,27 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import {GiCrenelCrown} from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import {RxHamburgerMenu} from "react-icons/rx";
 import {RxCross1} from "react-icons/rx";
 import {BsDot} from "react-icons/bs";
 import CartDropdown from './CartDropdown';
-import { CartContext } from '../contexts/CartContext';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {selectCurrentUser} from "../store/user/userSelector";
+import { selectCartItems, selectIsCartOpen } from '../store/cart/cartSelector';
+import { setIsCartOpen } from '../store/cart/cartAction';
 
 const NavBar = () => {
     const [menuIcon, setMenuIcon] = useState(false);
     const menuShowOpen = <RxHamburgerMenu className='icon'/>;
     const menuShowClose = <RxCross1 className='icon'/>;
     const handleChangeMenuIcon = () => setMenuIcon(!menuIcon);
-    const {isCartOpen, setIsCartOpen} = useContext(CartContext);
+    const isCartOpen = useSelector(selectIsCartOpen);
+    const cartItems = useSelector(selectCartItems);
+    const dispatch = useDispatch();
     const toggleIsCartOpen = () => {
-        setIsCartOpen(!isCartOpen);
+        dispatch(setIsCartOpen(!isCartOpen));
         setMenuIcon(false);
     }
-    const {cartItems} = useContext(CartContext);
     const currentUser = useSelector(selectCurrentUser);
   return (
     <>

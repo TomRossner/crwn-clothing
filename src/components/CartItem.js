@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {VscTrash} from "react-icons/vsc";
-import { CartContext } from '../contexts/CartContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItemFromCart } from '../store/cart/cartAction';
+import { selectCartItems } from '../store/cart/cartSelector';
 
 const CartItem = ({product}) => {
     const {imageUrl, name, price, quantity} = product;
     const currency = "USD";
-    const {removeItemFromCart} = useContext(CartContext);
-    const removeItem = () => removeItemFromCart(product);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
+    const removeItem = () => dispatch(removeItemFromCart(cartItems, product));
   return (
     <div className='cart-item'>
         <div className='cart-item-content'>

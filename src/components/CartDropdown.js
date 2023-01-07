@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import CartItem from './CartItem';
-import { CartContext } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import {RxCross1} from "react-icons/rx";
+import { useSelector } from 'react-redux';
+import { selectCartItems, selectCartCount, selectIsCartOpen } from '../store/cart/cartSelector';
 
 const CartDropdown = ({toggleIsCartOpen}) => {
-  const {cartItems, cartCount, isCartOpen} = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  const cartCount = useSelector(selectCartCount);
+  const isCartOpen = useSelector(selectIsCartOpen);
   return (
     <div className={isCartOpen ? "cart-dropdown open" : "cart-dropdown"}>
       <div className='content'>

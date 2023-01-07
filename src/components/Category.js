@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Category = ({category}) => {
+  // console.log(category)
   const {id, imageUrl: url, title} = category;
   return (
     <div key={id} className="category-container">
