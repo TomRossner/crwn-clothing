@@ -28,6 +28,11 @@
     }
 }
 
+@media screen and (min-width: 1260px) {
+    .categories-preview-container{
+        width: 70%;
+    }
+}
 @media screen and (max-width: 800px) {
     .categories-preview-container{
         h3{
