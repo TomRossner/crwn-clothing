@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CRWN-Clothing/static/css/main.1f5056a2.css",
+    "main.css": "/CRWN-Clothing/static/css/main.f2020400.css",
     "main.js": "/CRWN-Clothing/static/js/main.fa5b2c10.js",
     "static/js/787.4fb5f8c8.chunk.js": "/CRWN-Clothing/static/js/787.4fb5f8c8.chunk.js",
     "index.html": "/CRWN-Clothing/index.html",
-    "main.1f5056a2.css.map": "/CRWN-Clothing/static/css/main.1f5056a2.css.map",
+    "main.f2020400.css.map": "/CRWN-Clothing/static/css/main.f2020400.css.map",
     "main.fa5b2c10.js.map": "/CRWN-Clothing/static/js/main.fa5b2c10.js.map",
     "787.4fb5f8c8.chunk.js.map": "/CRWN-Clothing/static/js/787.4fb5f8c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f5056a2.css",
+    "static/css/main.f2020400.css",
     "static/js/main.fa5b2c10.js"
   ]
 }
