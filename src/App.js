@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser } from "./utils/firebase";
-import { setCurrentUser } from "./store/user/userAction";
+import { checkUserSession } from "./store/user/userAction";
 import { useDispatch } from "react-redux";
 
 // Styles
@@ -20,6 +19,8 @@ import "./styles/cart-dropdown.scss";
 import "./styles/cart-item.scss";
 import "./styles/checkout.scss";
 import "./styles/categories-preview.scss";
+import "./styles/spinner.scss";
+import "./styles/category-expanded.scss";
 
 // Components
 import Home from "./components/Home";
@@ -47,23 +48,19 @@ const App = () => {
 
 
   useEffect(() => {
-    const signOut = async () => await signOutUser();
-    const unsubscribe = onAuthStateChangedListener((user) => {
-        if (user) createUserDocumentFromAuth(user);
-        dispatch(setCurrentUser(user));
-    });
-    signOut();
-    return unsubscribe;
-}, []);
+    dispatch(checkUserSession());
+  },[]);
 
+
+  const [browsedCategory, setBrowsedCategory] = useState("");
 
   return (
     <div className='main-container'>
       <NavBar/>
       <Routes>
-          <Route path="/CRWN-Clothing" element={<Home/>}/>
-          <Route path="shop" element={<Shop/>}/>
-          <Route path="shop/:category" element={<CategoryExpanded/>}></Route>
+          <Route path="/CRWN-Clothing" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
+          <Route path="shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
+          <Route path="shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
           <Route path="about" element={<Home/>} />
           <Route path="sign-in" element={<SignIn/>}/>
           <Route path="sign-up" element={<Signup/>}/>

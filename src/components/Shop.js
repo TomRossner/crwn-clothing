@@ -1,10 +1,10 @@
 import React from 'react';
 import CategoriesPreview from "./CategoriesPreview";
 
-const Shop = () => {
+const Shop = ({category, setCategory}) => {
   return (
    <>
-   <CategoriesPreview/>
+   <CategoriesPreview category={category} setCategory={setCategory}/>
    </>
   )
 }

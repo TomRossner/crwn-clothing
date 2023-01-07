@@ -5,6 +5,8 @@ import Input from './common/Input';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import {SlCheck} from "react-icons/sl";
+import { useDispatch } from 'react-redux';
+import { signUpStart } from '../store/user/userAction';
 
 const defaultFormFields = {
     displayName: "",
@@ -19,6 +21,7 @@ const Signup = () => {
     const [userCreated, setUserCreated] = useState(false);
     const {displayName, email, password, confirmPassword} = formFields;
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (userCreated) setTimeout(() => {
@@ -38,8 +41,7 @@ const Signup = () => {
             return setError(`Passwords do not match. Please try again.`);
         }
         try {
-            const {user} = await createAuthUserWithEmailAndPassword(email, password);
-            await createUserDocumentFromAuth(user, {displayName});
+            dispatch(signUpStart(email, password, displayName));
             resetFormFields();
             setUserCreated(true);
         } catch (error) {

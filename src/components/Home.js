@@ -1,11 +1,11 @@
 import React from 'react';
 import Categories from './Categories';
 
-const Home = () => {
+const Home = ({setBrowsedCategory}) => {
   return (
     <div className='home-container'>
     <h1>Be the King.</h1>
-    <Categories/>
+    <Categories setBrowsedCategory={setBrowsedCategory}/>
     </div>
   )
 }

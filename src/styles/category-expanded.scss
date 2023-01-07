@@ -1,0 +1,45 @@
+.back-to-shop-and-title{
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+
+    h1{
+        flex: 1;
+        text-align: center;
+        font-family: Ubuntu, sans-serif;
+    }
+
+    .btn{
+        background-color: transparent;
+        color: black;
+        position: absolute;
+        left: 0;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding-inline: 1rem;
+
+        &:hover .icon{
+            transform: translateX(-0.5rem);
+        }
+
+        .icon{
+            scale: 1.2;
+            transition: transform 0.2s;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .back-to-shop-and-title{
+        .btn{
+            span{
+                display: none;
+            }
+            .back-only{
+                display: block;
+            }
+        }
+    }
+}

@@ -10,8 +10,9 @@ import {
     auth,
     signInUserWithEmailAndPassword
 } from "../utils/firebase";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../store/user/userSelector';
+import { googleSignInStart, emailSignInStart } from '../store/user/userAction';
 
 const defaultFormFields = {
     email: "",
@@ -29,14 +30,14 @@ const SignIn = () => {
         const {name, value} = event.target;
         setFormFields({...formFields, [name]: value});
     }
-
-    const signInWithGoogle = async () => await signInWithGooglePopup();
+    const dispatch = useDispatch();
+    const signInWithGoogle = async () => dispatch(googleSignInStart());
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!email || !password) return setErrors("Please enter your email and password.");
         try {
-            await signInUserWithEmailAndPassword(email, password);
+            dispatch(emailSignInStart(email, password));
             if (errors) setErrors("");
             resetFormFields();
         } catch (error) {
