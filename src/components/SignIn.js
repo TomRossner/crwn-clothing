@@ -5,10 +5,10 @@ import Input from './common/Input';
 import { getRedirectResult } from "firebase/auth";
 import {
     createUserDocumentFromAuth,
-    signInWithGooglePopup,
+    // signInWithGooglePopup,
     // signInWithGoogleRedirect,
     auth,
-    signInUserWithEmailAndPassword
+    // signInUserWithEmailAndPassword
 } from "../utils/firebase";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../store/user/userSelector';

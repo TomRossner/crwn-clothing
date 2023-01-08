@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import {GiCrenelCrown} from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import Input from './common/Input';
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import {SlCheck} from "react-icons/sl";
 import { useDispatch } from 'react-redux';
