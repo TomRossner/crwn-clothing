@@ -22,6 +22,7 @@ import "./styles/view-cart.scss";
 import "./styles/categories-preview.scss";
 import "./styles/spinner.scss";
 import "./styles/category-expanded.scss";
+import "./styles/not-found.scss";
 
 // Components
 import Home from "./components/Home";
@@ -35,6 +36,7 @@ import BackToTop from "./components/BackToTop";
 import Checkout from "./components/Checkout";
 import ViewCart from "./components/ViewCart";
 import CategoryExpanded from "./components/CategoryExpanded";
+import NotFound from "./components/NotFound";
 
 
 const App = () => {
@@ -64,6 +66,7 @@ const App = () => {
     <div className='main-container'>
       <NavBar/>
       <Routes>
+          <Route path='*' element={<NotFound />}/>
           <Route path="/CRWN-Clothing/" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
           <Route path="/CRWN-Clothing/shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
           <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
