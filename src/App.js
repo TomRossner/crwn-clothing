@@ -67,6 +67,7 @@ const App = () => {
       <NavBar/>
       <Routes>
           <Route path='*' element={<NotFound />}/>
+          <Route path='/CRWN-Clothing/*' element={<NotFound />}/>
           <Route path="/CRWN-Clothing/" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
           <Route path="/CRWN-Clothing/shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
           <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
