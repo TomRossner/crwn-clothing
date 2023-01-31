@@ -7,7 +7,7 @@ By building this project I learned how to use and setup Firebase authentications
 ## Features
 
 #### ∙ Sign-in/Sign up
-#### ∙ Google sign-in/sign up
+#### ∙ Google sign-in
 #### ∙ Browse different categories
 #### ∙ Add items to cart
 #### ∙ Review and edit cart
