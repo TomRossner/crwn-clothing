@@ -9,7 +9,7 @@ const BackToTop = () => {
         });
     }
   return (
-    <BiChevronUpCircle onClick={handleClick} className='back-to-top-button'></BiChevronUpCircle>
+    <span className='back-to-top-container' onClick={handleClick}><BiChevronUpCircle className='back-to-top-button'></BiChevronUpCircle></span>
   )
 }
 

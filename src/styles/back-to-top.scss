@@ -1,15 +1,30 @@
-.back-to-top-button{
+.back-to-top-container{
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: fixed;
     bottom: 5rem;
     right: 2rem;
-    font-size: 3.5rem;
-    color: black;
-    cursor: pointer;
-    animation: dotFadeInScale1 0.3s forwards;
-    transition: color 0.15s, scale 0.15s;
 
-    &:hover{
-        color: rgb(226, 89, 35, 1);
-        scale: 1.05;
+    .back-to-top-button{
+        font-size: 3.5rem;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        animation: dotFadeInScale1 0.3s forwards;
+        transition: color 0.15s, font-size 0.1s;
+    
+        
+    }
+    &:hover .back-to-top-button{
+        color: rgb(136, 136, 136);
+    }
+
+    &:active .back-to-top-button{
+        font-size: 2rem;
     }
 }

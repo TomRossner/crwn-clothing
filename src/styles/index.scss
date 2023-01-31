@@ -42,7 +42,7 @@ body{
     text-align: center;
 
     &:hover{
-        background-color: white;
+        background-color: rgb(214, 214, 214);
         color: rgba(0, 0, 0, 0.8);
     }
 
@@ -79,6 +79,10 @@ body{
 
 .white{
     color: white;
+}
+
+.black{
+    color: black;
 }
 
 .container{

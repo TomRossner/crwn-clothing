@@ -18,6 +18,7 @@ import "./styles/back-to-top.scss";
 import "./styles/cart-dropdown.scss";
 import "./styles/cart-item.scss";
 import "./styles/checkout.scss";
+import "./styles/view-cart.scss";
 import "./styles/categories-preview.scss";
 import "./styles/spinner.scss";
 import "./styles/category-expanded.scss";
@@ -32,6 +33,7 @@ import Logout from "./components/Logout";
 import Shop from "./components/Shop";
 import BackToTop from "./components/BackToTop";
 import Checkout from "./components/Checkout";
+import ViewCart from "./components/ViewCart";
 import CategoryExpanded from "./components/CategoryExpanded";
 
 
@@ -54,19 +56,23 @@ const App = () => {
 
   const [browsedCategory, setBrowsedCategory] = useState("");
 
+  useEffect(() => {
+    console.log("Browsed category: ", browsedCategory)
+  }, [browsedCategory])
+
   return (
     <div className='main-container'>
       <NavBar/>
       <Routes>
-          <Route path="/CRWN-Clothing" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
-          <Route path="shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
-          <Route path="shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
-          <Route path="about" element={<Home/>} />
-          <Route path="sign-in" element={<SignIn/>}/>
-          <Route path="sign-up" element={<Signup/>}/>
-          <Route path="logout" element={<Logout/>}/>
-          <Route path="cart" element={<Home/>}/>
-          <Route path="checkout" element={<Checkout/>}/>
+          <Route path="/CRWN-Clothing/" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
+          <Route path="/CRWN-Clothing/shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
+          <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
+          <Route path="/CRWN-Clothing/about" element={<Home/>} />
+          <Route path="/CRWN-Clothing/sign-in" element={<SignIn/>}/>
+          <Route path="/CRWN-Clothing/sign-up" element={<Signup/>}/>
+          <Route path="/CRWN-Clothing/logout" element={<Logout/>}/>
+          <Route path="/CRWN-Clothing/checkout" element={<Checkout/>}/>
+          <Route path="/CRWN-Clothing/cart" element={<ViewCart/>}/>
       </Routes>
       {scrollButton ? <BackToTop/> : null}
       <Footer/>

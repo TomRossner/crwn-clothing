@@ -121,7 +121,7 @@ const SignIn = () => {
                 </button> */}
             </div>
             <div className='sign-up-forgot-password'>
-                <p>Don't have an account? <Link to="/sign-up" className='link'>Sign up</Link>.</p>
+                <p>Don't have an account? <Link to="/CRWN-Clothing/sign-up" className='link'>Sign up</Link>.</p>
                 {/* <Link to="" className='link'>I forgot my password</Link> */}
             </div>
         </form>

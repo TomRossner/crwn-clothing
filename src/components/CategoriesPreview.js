@@ -6,7 +6,7 @@ import { selectCategories, selectCategoriesIsLoading } from '../store/categories
 import Product from './Product';
 import Spinner from "./common/Spinner";
 
-const CategoriesPreview = ({category, setCategory}) => {
+const CategoriesPreview = ({setCategory}) => {
     const dispatch = useDispatch();
     const categories = useSelector(selectCategories);
     const handleClick = (category) => setCategory(category);

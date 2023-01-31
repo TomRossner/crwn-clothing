@@ -30,10 +30,15 @@ const CartDropdown = ({toggleIsCartOpen}) => {
           : null
         }
         <div className='buttons-container'>
-          <button className={cartItems.length ? "btn" : "btn disabled"}>View Cart</button>
           {cartItems.length
-          ? (<Link to="/checkout" className='link'><button onClick={toggleIsCartOpen} className={cartItems.length ? "btn" : "btn disabled"}>Checkout</button></Link>)
-          : (<button className={cartItems.length ? "btn" : "btn disabled"}>Checkout</button>)
+          ? <>
+            <Link to="/CRWN-Clothing/cart" className="link"><button onClick={toggleIsCartOpen} className={cartItems.length ? "btn" : "btn disabled"}>View Cart</button></Link>
+            <Link to="/CRWN-Clothing/checkout" className="link"><button onClick={toggleIsCartOpen} className={cartItems.length ? "btn" : "btn disabled"}>Checkout</button></Link>
+          </>
+          : <>
+            <button className={cartItems.length ? "btn" : "btn disabled"}>View Cart</button>
+            <button className={cartItems.length ? "btn" : "btn disabled"}>Checkout</button>
+          </>
           }
         </div>
       </div>
