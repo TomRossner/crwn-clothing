@@ -1,4 +1,4 @@
-#### CRWN Clothing - E-commerce Web app
+# CRWN Clothing - E-commerce Web app
 
 This project is an e-commerce app built with
 - ReactJS
