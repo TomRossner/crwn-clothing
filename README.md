@@ -8,6 +8,8 @@ This project is an e-commerce app built with
 
 By building this project I learned how to use and setup Firebase authentications, manage databases in Firestore, setting up and managing states with Redux, and perfect the use of React-Router v6.
 
+#### Link: https://tomrossner.github.io/CRWN-Clothing/
+
 
 ## Features: 
 
