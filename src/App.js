@@ -55,22 +55,15 @@ const App = () => {
     dispatch(checkUserSession());
   },[]);
 
-
-  const [browsedCategory, setBrowsedCategory] = useState("");
-
-  useEffect(() => {
-    console.log("Browsed category: ", browsedCategory)
-  }, [browsedCategory])
-
   return (
     <div className='main-container'>
       <NavBar/>
       <Routes>
           <Route path='*' element={<NotFound />}/>
           <Route path='/CRWN-Clothing/*' element={<NotFound />}/>
-          <Route path="/CRWN-Clothing/" element={<Home setBrowsedCategory={setBrowsedCategory}/>}/>
-          <Route path="/CRWN-Clothing/shop" element={<Shop category={browsedCategory} setCategory={setBrowsedCategory}/>}/>
-          <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded category={browsedCategory}/>}></Route>
+          <Route path="/CRWN-Clothing/" element={<Home/>}/>
+          <Route path="/CRWN-Clothing/shop" element={<Shop/>}/>
+          <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded/>}></Route>
           <Route path="/CRWN-Clothing/about" element={<Home/>} />
           <Route path="/CRWN-Clothing/sign-in" element={<SignIn/>}/>
           <Route path="/CRWN-Clothing/sign-up" element={<Signup/>}/>
