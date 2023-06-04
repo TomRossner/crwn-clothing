@@ -17,7 +17,7 @@ const Checkout = () => {
         {!cartItems.length ?
         (<div className='container'>
             <h2>Your cart is empty</h2>
-            <button className='btn blue'><Link className='link' to="/CRWN-Clothing/">Back to the Homepage</Link></button>
+            <button className='btn blue'><Link className='link' to="/">Back to the Homepage</Link></button>
         </div>
         ):(
         <div className='items-container'>
@@ -49,8 +49,8 @@ const Checkout = () => {
                 })}
             </div>
             <p className='total'>Total: {cartTotal} {currency}</p>
-            <button className='btn long'><Link to="/CRWN-Clothing/checkout" className='link white'>Proceed to Checkout</Link></button>
-            <button className='btn long shop'><Link to="/CRWN-Clothing/shop" className='link'>Continue Shopping</Link></button>
+            <button className='btn long'><Link to="/checkout" className='link white'>Proceed to Checkout</Link></button>
+            <button className='btn long shop'><Link to="/shop" className='link'>Continue Shopping</Link></button>
         </div>
         )}
     </>

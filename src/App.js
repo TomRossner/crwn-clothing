@@ -59,17 +59,16 @@ const App = () => {
     <div className='main-container'>
       <NavBar/>
       <Routes>
-          <Route path='*' element={<NotFound />}/>
-          <Route path='/CRWN-Clothing/*' element={<NotFound />}/>
-          <Route path="/CRWN-Clothing/" element={<Home/>}/>
-          <Route path="/CRWN-Clothing/shop" element={<Shop/>}/>
-          <Route path="/CRWN-Clothing/shop/:category" element={<CategoryExpanded/>}></Route>
-          <Route path="/CRWN-Clothing/about" element={<Home/>} />
-          <Route path="/CRWN-Clothing/sign-in" element={<SignIn/>}/>
-          <Route path="/CRWN-Clothing/sign-up" element={<Signup/>}/>
-          <Route path="/CRWN-Clothing/logout" element={<Logout/>}/>
-          <Route path="/CRWN-Clothing/checkout" element={<Checkout/>}/>
-          <Route path="/CRWN-Clothing/cart" element={<ViewCart/>}/>
+          <Route path='/*' element={<NotFound />}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/shop" element={<Shop/>}/>
+          <Route path="/shop/:category" element={<CategoryExpanded/>}></Route>
+          <Route path="/about" element={<Home/>} />
+          <Route path="/sign-in" element={<SignIn/>}/>
+          <Route path="/sign-up" element={<Signup/>}/>
+          <Route path="/logout" element={<Logout/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/cart" element={<ViewCart/>}/>
       </Routes>
       {scrollButton ? <BackToTop/> : null}
       <Footer/>

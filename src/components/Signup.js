@@ -24,7 +24,7 @@ const Signup = () => {
 
     useEffect(() => {
         if (userCreated) setTimeout(() => {
-            navigate("/CRWN-Clothing/sign-in");
+            navigate("/sign-in");
             setUserCreated(false);
         }, 4000);
     }, [userCreated, navigate])
@@ -102,7 +102,7 @@ const Signup = () => {
                     <button type='submit' className='btn'>Sign up</button>
                 </div>
                 <div className='sign-up-forgot-password'>
-                    <p>Already have an account? <Link to="/CRWN-Clothing/sign-in" className='link'>Sign in</Link>.</p>
+                    <p>Already have an account? <Link to="/sign-in" className='link'>Sign in</Link>.</p>
                 </div>
             </form>
             ) : (

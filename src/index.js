@@ -13,15 +13,15 @@ import { stripePromise } from './utils/stripe';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <BrowserRouter>
+    <BrowserRouter basename='/crwn-clothing'>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
           <Elements stripe={stripePromise}>
             <App/>
           </Elements>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

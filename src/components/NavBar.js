@@ -28,15 +28,15 @@ const NavBar = () => {
     <CartDropdown toggleIsCartOpen={toggleIsCartOpen}/>
     <header>
         <div className='logo'>
-            <Link to="/CRWN-Clothing/" className='nav-link'>
+            <Link to="/" className='nav-link'>
                 <span>CRWN<GiCrenelCrown className='icon'/>Clothing</span>
             </Link>
         </div>
         <nav className='nav-full-width'>
             <ul>
-                <Link to="/CRWN-Clothing/" className='nav-link'><span>Home</span></Link>
-                <Link to="/CRWN-Clothing/shop" className='nav-link'><span>Shop</span></Link>
-                <Link to="/CRWN-Clothing/about" className='nav-link'><span>About</span></Link>
+                <Link to="/" className='nav-link'><span>Home</span></Link>
+                <Link to="/shop" className='nav-link'><span>Shop</span></Link>
+                <Link to="/about" className='nav-link'><span>About</span></Link>
             </ul>
             <ul>
                 <p className='nav-link' onClick={toggleIsCartOpen}>
@@ -46,8 +46,8 @@ const NavBar = () => {
                     </span>
                 </p> 
                 {currentUser
-                    ? (<Link to="/CRWN-Clothing/logout" className='nav-link'><span>Logout</span></Link>)
-                    : (<Link to="/CRWN-Clothing/sign-in" className='nav-link'><span>Sign in</span></Link>)
+                    ? (<Link to="/logout" className='nav-link'><span>Logout</span></Link>)
+                    : (<Link to="/sign-in" className='nav-link'><span>Sign in</span></Link>)
                 }   
             </ul>
         </nav>
@@ -64,17 +64,17 @@ const NavBar = () => {
             <p>CRWN CLOTHING</p>
         </div>
         <ul>
-            <Link to="/CRWN-Clothing/" className='nav-link' onClick={handleChangeMenuIcon}>Home</Link>
-            <Link to="/CRWN-Clothing/shop" className='nav-link' onClick={handleChangeMenuIcon}>Shop</Link>
-            <Link to="/CRWN-Clothing/about" className='nav-link' onClick={handleChangeMenuIcon}>About</Link>
+            <Link to="/" className='nav-link' onClick={handleChangeMenuIcon}>Home</Link>
+            <Link to="/shop" className='nav-link' onClick={handleChangeMenuIcon}>Shop</Link>
+            <Link to="/about" className='nav-link' onClick={handleChangeMenuIcon}>About</Link>
         </ul>
         <ul>
             <p className='nav-link' onClick={toggleIsCartOpen}>
                 <span className='cart-with-count'>Cart</span>
             </p>
             {currentUser
-                ? (<Link to="/CRWN-Clothing/logout" className='nav-link' onClick={handleChangeMenuIcon}><div>Logout</div></Link>) 
-                : (<Link to="/CRWN-Clothing/sign-in" className='nav-link' onClick={handleChangeMenuIcon}><div>Sign in</div></Link>)
+                ? (<Link to="/logout" className='nav-link' onClick={handleChangeMenuIcon}><div>Logout</div></Link>) 
+                : (<Link to="/sign-in" className='nav-link' onClick={handleChangeMenuIcon}><div>Sign in</div></Link>)
             }
         </ul>
     </div>

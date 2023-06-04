@@ -11,7 +11,7 @@ const Checkout = () => {
     if (!stripe || !elements) return;
 
     try {
-      const {data} = await axios.post('/CRWN-Clothing/.netlify/functions/create-payment-intent', {
+      const {data} = await axios.post('/.netlify/functions/create-payment-intent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

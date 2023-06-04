@@ -9,7 +9,6 @@ export const selectCategories = createSelector([selectCategoriesReducer], (categ
 export const selectCategoriesMap = createSelector([selectCategories], (categories) => { // Not used
     if (!categories.length) return;
     return Object.values(categories).reduce((acc, category) => {
-        console.log("hey");
         const {title, items} = category;
         acc[title.toLowerCase()] = items;
         return acc;

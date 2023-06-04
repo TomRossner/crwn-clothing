@@ -22,7 +22,7 @@ const CategoryExpanded = () => {
     ? (
     <div className='categories-preview-container'>
       <div className='back-to-shop-and-title'>
-        <Link to="/CRWN-Clothing/shop" className='btn link'><BsChevronLeft className='icon'/><span className='back-only'>Back <span>to Shop</span></span></Link>
+        <Link to="/shop" className='btn link'><BsChevronLeft className='icon'/><span className='back-only'>Back <span>to Shop</span></span></Link>
         <h1>{categoryName.category.toUpperCase()}</h1>
       </div>
       <div className='products-container'>

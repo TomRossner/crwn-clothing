@@ -9,7 +9,7 @@ const Logout = () => {
 
     useEffect(() => {
       dispatch(signOutStart());
-      navigate("/CRWN-Clothing/");
+      navigate("/");
     }, []);
 
   return null;

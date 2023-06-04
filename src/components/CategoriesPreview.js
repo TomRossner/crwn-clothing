@@ -28,7 +28,7 @@ const CategoriesPreview = ({setCategory}) => {
                         .filter((_, index) => index < 4)
                         .map(item => <Product key={item.id} product={item}/>)}
                 </div>
-                <Link to={`${category[0]}`} onClick={() => handleClick(category[0])} className='btn link white small'>Show more</Link>
+                <Link to={`/shop/${category[0]}`} onClick={() => handleClick(category[0])} className='btn link white small'>Show more</Link>
             </div>
             )
         })}
